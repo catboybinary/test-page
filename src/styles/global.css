@@ -81,6 +81,10 @@ h1 {
     border-radius: .5em;
 }
 
+button {
+    background-color: black;
+}
+
 .nav-links a:hover,
 .nav-links a:focus {
     background-color: hwb(240 19% 71%);
