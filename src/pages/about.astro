@@ -1,18 +1,29 @@
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/test-page/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro About</title>
-	</head>
-	<body>
-        <a href="/test-page/">Home</a>
-        <a href="/test-page/about/">About</a>
-        <a href="/test-page/blog/">Blog</a>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-		<h1>About</h1>
-        <p>something something skibi toilet</p>
-        <h3>crazy? i waas crazy once they locked me in a room a rubber room a rubber room with rats</h3>
-	</body>
-</html>
+const identity = {
+	username: "catboybinary",
+	planet: "Earth",
+	occupation: "Game developer",
+	hobbies: ["programming", "moosic"]
+}
+
+const skills = ["HTML", "CSS", "JS", "GDScript", "Python", "Java", "C# (abandoned)", "TypeScript (learning)"]
+---
+<BaseLayout title="About Me">
+	<p>something something skibi toilet</p>
+	<p>Here are a few facts about me:</p>
+	<ul>
+	<li>My name is {identity.username}.</li>
+	<li>I live at {identity.planet} and I work as a {identity.occupation}.</li>
+	{identity.hobbies.length >= 2 &&
+		<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+	}
+	</ul>
+	<p>My skills are:</p>
+	<ul>
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+	</ul>
+</BaseLayout>
+
+

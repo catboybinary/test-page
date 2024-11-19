@@ -1,16 +1,10 @@
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/test-page/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro Blog</title>
-    </head>
-    <body>
-        <a href="/test-page/">Home</a>
-        <a href="/test-page/about/">About</a>
-        <a href="/test-page/blog/">Blog</a>
-
-        <h1>Blog</h1>
-    </body>
-</html>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Blog">
+    <ul>
+        <li><a href="/test-page/posts/1/">Post 1</a></li>
+        <li><a href="/test-page/posts/2/">Post 2</a></li>
+        <li><a href="/test-page/posts/3/">Post 3</a></li>
+    </ul>
+</BaseLayout>
