@@ -1,0 +1,13 @@
+---
+import type { MarkdownInstance } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allPosts: MarkdownInstance<Record<string, any>>[] = await Astro.glob('../posts/*.md');
+const tags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags))];
+---
+<BaseLayout title="Tags">
+    <div class="tags">
+        {tags.map(tag => 
+            <a class="button" href={`/test-page/tags/${tag}`}>{tag}</a>
+        )}
+    </div>
+</BaseLayout>

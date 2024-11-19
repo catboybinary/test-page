@@ -1,10 +1,4 @@
 ---
 const { platform, username } = Astro.props;
 ---
-<style>
-    a {
-        padding: 0.5rem 1rem;
-        background-color: hwb(240 19% 71%);
-    }
-</style>
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a class="button" href={`https://www.${platform}.com/${username}`}>{platform}</a>

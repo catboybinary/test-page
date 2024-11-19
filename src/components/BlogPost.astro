@@ -1,0 +1,11 @@
+---
+interface Props {
+    url: string | undefined
+    frontmatter: Record<string, any>
+}
+
+const {url, frontmatter} = Astro.props;
+---
+<li>
+    <a href={url}>{frontmatter.title}</a>
+</li>
